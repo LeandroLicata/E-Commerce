@@ -27,6 +27,10 @@
   padding: 0;
 }
 
+.navbar-links.collapsed {
+  display: none;
+}
+
 .navbar-links li {
   margin: 0 5px;
 }
@@ -34,4 +38,32 @@
 .active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    background-color: #007bff;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar-links.collapsed {
+    display: none;
+  }
 }
