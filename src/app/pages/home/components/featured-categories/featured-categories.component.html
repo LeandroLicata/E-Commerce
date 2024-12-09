@@ -1,0 +1,9 @@
+<div class="categories">
+  <h2>Categorías Principales</h2>
+  <div class="category-grid">
+    <div *ngFor="let category of categories" class="category-card">
+      <img [src]="category.image" [alt]="category.name" />
+      <p>{{ category.name }}</p>
+    </div>
+  </div>
+</div>
