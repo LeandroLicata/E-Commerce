@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
   isCollapsed = true;
-  isMobile = false
+  isMobile = false;
 
   constructor() {
     this.checkScreenSize();
@@ -19,17 +19,24 @@ export class NavbarComponent {
 
   @HostListener('window:resize', [])
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; // Cambia el tamaño si es necesario
+    this.isMobile = window.innerWidth <= 768;
     if (!this.isMobile) {
-      this.isCollapsed = false; // Siempre visible en desktop
+      this.isCollapsed = false;
     } else {
-      this.isCollapsed = true; // Colapsado en mobile
+      this.isCollapsed = true;
     }
   }
 
   toggleNavbar() {
     if (this.isMobile) {
-      this.isCollapsed = !this.isCollapsed; // Solo afecta en mobile
+      this.isCollapsed = !this.isCollapsed;
+    }
+  }
+
+  onSearch(query: string) {
+    if (query.trim()) {
+      console.log('Buscando:', query);
+      // Lógica adicional como navegar a una página de resultados o filtrar productos
     }
   }
 }
