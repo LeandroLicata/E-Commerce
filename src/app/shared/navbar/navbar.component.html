@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
-      <img src="assets/images/LeandroMarketAlt.png" alt="logo" />
+      <img [src]="logoUrl" alt="logoLeanMarket" />
     </a>
     <form class="search-form" (submit)="onSearch(searchInput.value)">
       <input

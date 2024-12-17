@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  logoUrl: string = 'assets/images/LeandroMarketAlt';
+
   isCollapsed = true;
   isMobile = false;
 
@@ -20,11 +22,20 @@ export class NavbarComponent {
   @HostListener('window:resize', [])
   checkScreenSize() {
     this.isMobile = window.innerWidth <= 768;
+
+    this.logoUrl = this.isMobile
+      ? 'assets/images/LeanMarketSmall.png'
+      : 'assets/images/LeandroMarketAlt.png';
+
     if (!this.isMobile) {
       this.isCollapsed = false;
     } else {
       this.isCollapsed = true;
     }
+  }
+
+  ngOnInit() {
+    this.checkScreenSize();
   }
 
   toggleNavbar() {

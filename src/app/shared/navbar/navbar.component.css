@@ -2,6 +2,9 @@
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .navbar .container {
@@ -47,6 +50,12 @@
   font-size: 20px;
   cursor: pointer;
   display: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  margin-left: auto;
+  padding: 5px 10px;
 }
 
 .search-form {
@@ -80,6 +89,10 @@
   background-color: #0056b3;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .navbar-brand img {
   height: 40px;
   width: auto;
@@ -87,7 +100,14 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar .container {
+    flex-direction: row;
+    align-items: center;
   }
 
   .navbar-toggler {
@@ -101,6 +121,7 @@
     top: 50px;
     right: 0;
     width: 100%;
+    z-index: 999;
   }
 
   .navbar-links.collapsed {
@@ -108,12 +129,22 @@
   }
 
   .search-form {
-    margin-top: 10px;
     width: 100%;
-    justify-content: flex-end;
+    margin: 5px 0;
   }
 
   .navbar-brand img {
     height: 30px;
+  }
+
+  .search-input {
+    width: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .search-button {
+    padding: 5px 10px;
+    font-size: 14px;
   }
 }
